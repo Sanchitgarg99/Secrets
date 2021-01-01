@@ -23,7 +23,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 //1. mongoose connection
-mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser:true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://sanchitgarg:Sunchit573@cluster0.njmem.mongodb.net/userDB",{useNewUrlParser:true, useUnifiedTopology: true });
 
 mongoose.set("useCreateIndex",true);
 //2. Schema  for user data collection
@@ -151,6 +151,6 @@ app.post("/login",function(req,res){
 
 
 
-app.listen(3006,function(req,res){
+app.listen(process.env.PORT || 3006,function(req,res){
   console.log("Yuhu");
 });
